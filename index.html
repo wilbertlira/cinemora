@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cinemora - Filmes e Séries</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Cinemora</h1>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Filmes</a>
+      <a href="#">Séries</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+<div class="carousel-container">
+  <div class="carousel" id="carousel">
+    <a href="https://youtube.com/watch?v=trailer1" target="_blank">
+      <img src="repository/teste1.jfif" alt="Filme 1">
+    </a>
+    <a href="https://youtube.com/watch?v=trailer2" target="_blank">
+      <img src="imagens/filme2.jpg" alt="Filme 2">
+    </a>
+    <a href="https://youtube.com/watch?v=trailer3" target="_blank">
+      <img src="imagens/filme3.jpg" alt="Filme 3">
+    </a>
+  </div>
+  <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const carousel = document.getElementById("carousel");
+  const totalSlides = carousel.children.length;
+
+  function moveSlide(direction) {
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  // Auto-slide opcional
+  setInterval(() => moveSlide(1), 5000);
+</script>
+
+
+
+  <div class="section">
+    <h3>Destaques</h3>
+    <div class="gallery">
+      <div class="card">
+        <img src="https://image.tmdb.org/t/p/w500/8YFL5QQVPy3AgrEQxNYVSgiPEbe.jpg" alt="Filme 1">
+        <div class="card-title">Oppenheimer</div>
+      </div>
+      <div class="card">
+        <img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" alt="Filme 2">
+        <div class="card-title">Batman: O Cavaleiro das Trevas</div>
+      </div>
+      <div class="card">
+        <img src="https://image.tmdb.org/t/p/w500/eD2eT6M5qGMzXgqCFFz3DMkoxgO.jpg" alt="Série 1">
+        <div class="card-title">Breaking Bad</div>
+      </div>
+      <div class="card">
+        <img src="https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg" alt="Série 2">
+        <div class="card-title">Stranger Things</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Cinemora. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
