@@ -32,5 +32,5 @@ Bem-vindo ao **Cinemora**, uma plataforma moderna de streaming que oferece filme
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seuusuario/cinemora.git
+git clone https://github.com/wilbertlira/cinemora.git
 cd cinemora
