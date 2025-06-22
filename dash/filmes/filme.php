@@ -4,7 +4,7 @@ include "conexao.php";
 
 // Verifica se está logado
 if (!isset($_SESSION['usuario'])) {
-  header("Location: /cinemora/filmes/login.php");
+  header("Location: /filmes/login.php");
   exit();
 }
 
@@ -14,11 +14,52 @@ $sql = "SELECT vip FROM usuarios WHERE usuario = '$usuario' LIMIT 1";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 
+
+//antigo
+/*
 if ($row['vip'] != 1) {
   echo "<h2 style='color: red; text-align:center;'>⚠️ Acesso restrito! Apenas usuários VIP podem assistir a este filme.</h2>";
   echo "<div style='text-align:center;'><a href='logout.php' style='color:#e50914;'>Sair</a></div>";
   exit();
 }
+  */
+
+
+if ($row['vip'] != 1) {
+  echo "
+  <div style='
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 30px;
+    background-color: #1c1c1c;
+    border: 2px solid #e50914;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  '>
+    <h2 style='font-size: 22px; margin-bottom: 20px;'>⚠️ Acesso Restrito</h2>
+    <p style='font-size: 18px; margin-bottom: 25px;'>
+      Apenas <strong>usuários VIP</strong> podem assistir a este filme.
+    </p>
+    <a href='logout.php' style='
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #e50914;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    ' onmouseover=\"this.style.backgroundColor='#b00710'\" onmouseout=\"this.style.backgroundColor='#e50914'\">
+      Sair
+    </a>
+  </div>
+  ";
+  exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -128,8 +169,21 @@ if ($row['vip'] != 1) {
 <div class="container">
   <div class="user-info">
     Logado como: <strong><?php echo $_SESSION['usuario']; ?></strong>
-    <a class="logout-link" href="logout.php">Sair</a>
+    <a class="logout-link" href="#" onclick="logoutNow(event)">Sair</a>
   </div>
+</div>
+
+<script>
+function logoutNow(event) {
+  event.preventDefault(); // Evita seguir o link padrão
+  window.location.href = "/dash/filmes/logout.php"; // Caminho absoluto a partir de localhost
+}
+</script>
+
+
+
+
+
 
   <div class="video-player">
     <video controls>
