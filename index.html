@@ -171,7 +171,7 @@
     function moveInfantilSlide(direction) {
       const cardStyle = window.getComputedStyle(infantilCarousel.children[0]);
       const cardWidth = infantilCarousel.children[0].offsetWidth;
-      const gap = parseInt(cardStyle.marginRight) || 10; // fallback gap 10px
+      const gap = parseInt(cardStyle.marginRight) || 10; 
       const scrollAmount = cardWidth + gap;
 
       infantilCarousel.scrollBy({
@@ -185,7 +185,7 @@
   function moveNovidadesSlide(direction) {
     const carousel = document.getElementById("novidades-carousel");
     const card = carousel.querySelector(".card");
-    const cardWidth = card.offsetWidth + 20; // ajuste se o seu gap for diferente
+    const cardWidth = card.offsetWidth + 20; 
     carousel.scrollBy({
       left: direction * cardWidth,
       behavior: 'smooth'
@@ -198,7 +198,7 @@
   function moveDestaqueSlide(direction) {
     const carousel = document.getElementById("Destaque-carousel");
     const card = carousel.querySelector(".card");
-    const cardWidth = card.offsetWidth + 20; // ajuste se o seu gap for diferente
+    const cardWidth = card.offsetWidth + 20; // 20-04-25 (cuidado!!)
     carousel.scrollBy({
       left: direction * cardWidth,
       behavior: 'smooth'
@@ -212,3 +212,4 @@
 
 
 </html>
+
