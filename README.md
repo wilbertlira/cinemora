@@ -4,20 +4,20 @@ Bem-vindo ao **Cinemora**, uma plataforma moderna de streaming que oferece filme
 
 ---
 
-## 🌟 Funcionalidades
+##  Funcionalidades
 
-- 🎞️ Carrossel de filmes e séries em destaque
-- 🔐 Sistema de login com autenticação via banco de dados MySQL
-- 💳 Área de cadastro com pagamento via PIX (Mercado Pago)
-- ⭐ Plano gratuito (com anúncios) e plano VIP (sem anúncios)
-- 🎨 Tema escuro com interface moderna e responsiva
-- 🛒 Sistema de checkout com coleta de dados de entrega
-- 📦 Página de confirmação de pedido e status do pagamento
-- 🔍 Página com detalhes de cada filme/série
+-  Carrossel de filmes e séries em destaque
+-  Sistema de login com autenticação via banco de dados MySQL
+-  Área de cadastro com pagamento via PIX (Mercado Pago)
+-  Plano gratuito (com anúncios) e plano VIP (sem anúncios)
+-  Tema escuro com interface moderna e responsiva
+-  Sistema de checkout com coleta de dados de entrega
+-  Página de confirmação de pedido e status do pagamento
+-  Página com detalhes de cada filme/série
 
 ---
 
-## 🧱 Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Backend**: PHP 8+
